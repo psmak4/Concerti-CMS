@@ -1,0 +1,13 @@
+﻿@using Concerti.Website.Areas.Admin.Models;
+
+@{ var alerts = TempData.ContainsKey(Alert.TempDataKey) ? (List<Alert>)TempData[Alert.TempDataKey] : new List<Alert>(); }
+@foreach (var alert in alerts)
+{
+	<div class="alert alert--@alert.AlertType">
+		@alert.Message
+		@if (alert.Dismissable)
+		{
+			<div class="alert__dismiss"><span class="alert__dismiss-icon fa fa-fw fa-close"></span></div>
+		}
+	</div>
+}

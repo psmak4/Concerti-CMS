@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - Concerti Admin</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Pacifico" rel="stylesheet">
+	<link href="~/css/admin.min.css" rel="stylesheet" />
+	@RenderSection("head", false)
+</head>
+<body>
+	<header class="header">
+		<div class="header__logo">
+			<a class="header__logo-link" href="@Url.RouteUrl("AdminIndex")">Concerti Admin</a>
+		</div>
+
+		<nav class="header__nav nav">
+			<ul class="nav__items">
+				<li class="nav__item"><a class="nav__link" href="@Url.RouteUrl("AdminDashboard")"><i class="nav__link-icon fa fa-fw fa-dashboard"></i>Dashboard</a></li>
+				<li class="nav__item"><a class="nav__link" href="@Url.RouteUrl("AdminPagesList")"><i class="nav__link-icon fa fa-fw fa-file"></i>Pages</a></li>
+				<li class="nav__item"><a class="nav__link" href="@Url.RouteUrl("AdminUsersList")"><i class="nav__link-icon fa fa-fw fa-users"></i>Users</a></li>
+				<li class="nav__item"><a class="nav__link" href="@Url.RouteUrl("AdminSettingsList")"><i class="nav__link-icon fa fa-fw fa-cogs"></i>Settings</a></li>
+				<li class="nav__item"><a class="nav__link" href="@Url.RouteUrl("Logout")"><i class="nav__link-icon fa fa-fw fa-sign-out"></i>Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="main">
+		<h1 class="main__title">@ViewBag.Title</h1>
+
+		<div class="main__body">
+			@{ Html.RenderPartial("_Alerts"); }
+
+			@RenderBody()
+		</div>
+	</main>
+
+	<script src="~/js/admin.min.js"></script>
+	@RenderSection("scripts", false)
+</body>
+</html>

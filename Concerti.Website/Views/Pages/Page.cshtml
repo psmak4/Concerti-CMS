@@ -1,0 +1,12 @@
+﻿@model Concerti.Website.ViewModels.Pages.PageViewModel
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+@if (Model.DisplayTitle)
+{
+	<h1>@Model.Title</h1>
+}
+
+<div>@Html.Raw(Model.Content)</div>

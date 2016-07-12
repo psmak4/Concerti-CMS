@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Concerti.Website.Models.Page>
+
+@{
+	ViewBag.Title = "Pages";
+}
+
+<div class="main__tools">
+	<a href="@Url.RouteUrl("AdminPageNew")" class="button button--primary">Add New <span class="button__icon fa fa-fw fa-plus"></span></a>
+</div>
+
+<table class="table">
+	<thead class="table__head">
+		<tr class="table__head-row">
+			<th class="table__head-cell">Title</th>
+			<th class="table__head-cell">Slug</th>
+			<th class="table__head-cell table__head-cell--text-center">Active</th>
+			<th class="table__head-cell"></th>
+		</tr>
+	</thead>
+	<tbody class="table__body">
+		@foreach (var item in Model)
+		{
+			<tr class="table__body-row">
+				<td class="table__body-cell">@Html.DisplayFor(modelItem => item.Title)</td>
+				<td class="table__body-cell">@Html.DisplayFor(modelItem => item.Slug)</td>
+				<td class="table__body-cell table__body-cell--text-center">
+					<input @if(item.IsActive) { <text>checked="checked"</text> } class="form__checkbox" type="checkbox">
+					<label></label>
+				</td>
+				<td class="table__body-cell table__body-cell--text-right">
+					<div class="dropdown dropdown--right">
+						<button class="dropdown__button"><span class="dropdown__button-icon fa fa-fw fa-gear"></span><span class="dropdown__button-icon fa fa-fw fa-angle-down"></span></button>
+						<div class="dropdown__content">
+							<a class="dropdown__link" href="@Url.RouteUrl("AdminPageEdit", new { pageId = item.PageId })">Edit</a>
+							<a class="dropdown__link" href="@Url.RouteUrl("AdminPageDelete", new { pageId = item.PageId })" onclick="return confirm('Are you sure you wish to delete this page?\nThis can not be undone.');">Delete</a>
+						</div>
+					</div>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

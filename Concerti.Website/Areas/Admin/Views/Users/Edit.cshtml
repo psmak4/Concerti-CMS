@@ -1,0 +1,49 @@
+﻿@model Concerti.Website.Areas.Admin.ViewModels.Users.EditViewModel
+
+@{
+	ViewBag.Title = "Edit User: " + Model.Username;
+}
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+	@Html.HiddenFor(model => model.UserId);
+	@Html.HiddenFor(model => model.Username);
+
+	<div class="form">
+		@Html.ValidationSummary(true, "", new { @class = "form__errors" })
+
+		<div class="form__body">
+			<div class="form__row">
+				@Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form__label" })
+				@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form__input" } })
+				@Html.ValidationMessageFor(model => model.Email, "", new { @class = "form__field-error" })
+			</div>
+
+			<div class="form__row">
+				@Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "form__label" })
+				@Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form__input" } })
+				@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "form__field-error" })
+			</div>
+
+			<div class="form__row">
+				@Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "form__label" })
+				@Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form__input" } })
+				@Html.ValidationMessageFor(model => model.LastName, "", new { @class = "form__field-error" })
+			</div>
+
+			<div class="form__row">
+				<input type="submit" value="Save" class="button button--accent" />
+				<a class="button" href="@Url.RouteUrl("AdminUsersList")">Cancel</a>
+			</div>
+		</div>
+	</div>
+}
+
+@section scripts {
+	<script>
+		$(function () {
+			$('#Email').focus();
+		});
+	</script>
+}

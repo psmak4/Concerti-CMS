@@ -1,0 +1,72 @@
+﻿@model Concerti.Website.Areas.Admin.ViewModels.Pages.CreateViewModel
+
+@{
+    ViewBag.Title = "New Page";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form">
+        @Html.ValidationSummary(true, "", new { @class = "form__errors" })
+
+		<div class="form__body grid grid--sidebar-right">
+			<div class="content">
+				<div class="form__row">
+					@Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "form__label" })
+					@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form__input" } })
+					@Html.ValidationMessageFor(model => model.Title, "", new { @class = "form__field-error" })
+				</div>
+
+				<div class="form__row">
+					@Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "form__label" })
+					@Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form__input" } })
+					@Html.ValidationMessageFor(model => model.Content, "", new { @class = "form__field-error" })
+				</div>
+			</div>
+
+			<div class="sidebar">
+				<div class="form__row">
+					@Html.LabelFor(model => model.Slug, htmlAttributes: new { @class = "form__label" })
+					@Html.EditorFor(model => model.Slug, new { htmlAttributes = new { @class = "form__input" } })
+					@Html.ValidationMessageFor(model => model.Slug, "", new { @class = "form__field-error" })
+				</div>
+
+				<div class="form__row">
+					@Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "form__checkbox" } })
+					@Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "form__label" })
+					@Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "form__field-error" })
+				</div>
+
+				<div class="form__row">
+					@Html.EditorFor(model => model.DisplayTitle, new { htmlAttributes = new { @class = "form__checkbox" } })
+					@Html.LabelFor(model => model.DisplayTitle, htmlAttributes: new { @class = "form__label" })
+					@Html.ValidationMessageFor(model => model.DisplayTitle, "", new { @class = "form__field-error" })
+				</div>
+			</div>
+		</div>
+
+        <div class="form__row">
+			<input type="submit" value="Create" class="button button--accent" />
+			<a class="button" href="@Url.RouteUrl("AdminPagesList")">Cancel</a>
+        </div>
+    </div>
+}
+
+@section scripts {
+	<script src="~/lib/ckeditor/ckeditor.js"></script>
+	<script>
+		$(function () {
+			var title = $('#Title');
+			var slug = $('#Slug');
+
+			title.focus().keyup(function (event) {
+				var titleValue = $(this).val();
+				slug.val(Concerti.Utils.ConvertToSlug(titleValue));
+			});
+
+			CKEDITOR.replace('Content');
+		});
+	</script>
+}

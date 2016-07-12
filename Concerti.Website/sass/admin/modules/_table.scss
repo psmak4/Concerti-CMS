@@ -1,0 +1,54 @@
+﻿.table {
+	width: 100%;
+	border-collapse: collapse;
+
+	&__head {
+		border-bottom: 0.25rem solid $table-head-border-color;
+		background-color: $table-head-background-color;
+		color: $table-head-font-color;
+		font-family: $table-head-font-family;
+		font-size: $table-head-font-size;
+
+		&-row {
+
+		}
+
+		&-cell {
+			padding: 0.75rem 1rem;
+			font-size: 1.1rem;
+			font-weight: 400;
+			text-align: left;
+
+			&--text-center {
+				text-align: center;
+			}
+		}
+	}
+
+	&__body {
+
+		&-row {
+
+			&:nth-child(even) {
+				background-color: $table-body-row-alt-background-color;
+			}
+		}
+
+		&-cell {
+			padding: 0.5rem 1rem;
+			text-align: left;
+
+			&--text-center {
+				text-align: center;
+			}
+
+			&--text-right {
+				text-align: right;
+			}
+
+			&--tools {
+				max-width: 0;
+			}
+		}
+	}
+}

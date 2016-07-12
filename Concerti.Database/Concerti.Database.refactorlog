@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="8cf280e1-543f-4c12-8a30-c1cae8dc9796" ChangeDateTime="06/24/2016 00:36:31">
+    <Property Name="ElementName" Value="[dbo].[Users].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Users]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0c6a2e24-c706-4b5b-b759-55b5eb9b8cb8" ChangeDateTime="06/24/2016 00:37:32">
+    <Property Name="ElementName" Value="[dbo].[Roles].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Roles]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RoleId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="edbeda27-bf1e-4a22-b956-f21a407725d3" ChangeDateTime="06/24/2016 00:38:28">
+    <Property Name="ElementName" Value="[dbo].[UserRoles].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[UserRoles]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f8422953-00b5-4ed6-8493-86ba955f7567" ChangeDateTime="06/24/2016 00:39:46">
+    <Property Name="ElementName" Value="[dbo].[FK_UserRoles_ToUsers]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[UserRoles]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_UserRoles_Users]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="07df8e46-58fb-49b1-b072-d68e8841144d" ChangeDateTime="06/30/2016 03:04:59">
+    <Property Name="ElementName" Value="[dbo].[Settings].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Settings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SettingId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e22d2d17-6fb0-4758-964d-35b3305c19b8" ChangeDateTime="06/30/2016 03:07:34">
+    <Property Name="ElementName" Value="[dbo].[SettingOptions].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SettingOptions]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SettingOptionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cb0e7359-ce44-495e-b10e-b800dacd9ba1" ChangeDateTime="06/30/2016 04:19:48">
+    <Property Name="ElementName" Value="[dbo].[Pages].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Pages]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PageId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cf8690db-9879-4585-b591-463e441fc702" ChangeDateTime="06/30/2016 06:21:10">
+    <Property Name="ElementName" Value="[dbo].[PageLayouts].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PageLayouts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PageLayoutId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c83379ce-ed12-4499-ac59-20f05c5cc742" ChangeDateTime="06/30/2016 06:22:16">
+    <Property Name="ElementName" Value="[dbo].[PageLayoutSections].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PageLayoutSections]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PageLayoutSectionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c7e6a147-a953-4955-b19a-56514725dcb9" ChangeDateTime="06/30/2016 06:28:09">
+    <Property Name="ElementName" Value="[dbo].[PageLayoutSectionValues].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PageLayoutSectionValues]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PageLayoutSectionValueId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c29f70ae-81f3-44c5-98ed-580323a2a65e" ChangeDateTime="06/30/2016 06:46:01">
+    <Property Name="ElementName" Value="[dbo].[Pages].[SortOder]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Pages]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SortOrder" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="95d4e9a7-6a72-48ee-97a5-1d1b588011a7" ChangeDateTime="07/05/2016 18:22:42">
+    <Property Name="ElementName" Value="[dbo].[FK_Pages_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Pages]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Pages_Users-LastUpdated]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7f6b75d6-5e1c-4d83-afae-8e6b8e7a21ab" ChangeDateTime="07/08/2016 21:50:23">
+    <Property Name="ElementName" Value="[dbo].[BlogPosts].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BlogPosts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BlogPostId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e18b0dd9-84c7-438b-986b-aa62a626bcef" ChangeDateTime="07/08/2016 21:57:15">
+    <Property Name="ElementName" Value="[dbo].[FK_BlogPosts_Users]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[BlogPosts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_BlogPosts_Users-Created]" />
+  </Operation>
+</Operations>

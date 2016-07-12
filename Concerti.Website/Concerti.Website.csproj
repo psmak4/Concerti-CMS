@@ -1,0 +1,811 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54479DAE-1808-40CA-8D3B-A3BEF2482F3A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Concerti.Website</RootNamespace>
+    <AssemblyName>Concerti.Website</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc.4.0.1\lib\net45\Microsoft.Practices.Unity.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.AspNet.WebApi.4.0.1\lib\net45\Microsoft.Practices.Unity.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\admin.css" />
+    <Content Include="css\admin.min.css">
+      <DependentUpon>admin.css</DependentUpon>
+    </Content>
+    <Content Include="css\concerti.css" />
+    <Content Include="css\concerti.min.css">
+      <DependentUpon>concerti.css</DependentUpon>
+    </Content>
+    <Content Include="css\main.css" />
+    <Content Include="css\main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="js\admin.js" />
+    <Content Include="js\admin.min.js">
+      <DependentUpon>admin.js</DependentUpon>
+    </Content>
+    <Content Include="js\concerti.js" />
+    <Content Include="js\concerti.min.js">
+      <DependentUpon>concerti.js</DependentUpon>
+    </Content>
+    <Content Include="js\main.min.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\AdminLTE.css" />
+    <Content Include="lib\adminlte\css\AdminLTE.min.css">
+      <DependentUpon>AdminLTE.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-black-light.css" />
+    <Content Include="lib\adminlte\css\skins\skin-black-light.min.css">
+      <DependentUpon>skin-black-light.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-black.css" />
+    <Content Include="lib\adminlte\css\skins\skin-black.min.css">
+      <DependentUpon>skin-black.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-blue-light.css" />
+    <Content Include="lib\adminlte\css\skins\skin-blue-light.min.css">
+      <DependentUpon>skin-blue-light.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-blue.css" />
+    <Content Include="lib\adminlte\css\skins\skin-blue.min.css">
+      <DependentUpon>skin-blue.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-green-light.css" />
+    <Content Include="lib\adminlte\css\skins\skin-green-light.min.css">
+      <DependentUpon>skin-green-light.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-green.css" />
+    <Content Include="lib\adminlte\css\skins\skin-green.min.css">
+      <DependentUpon>skin-green.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-purple-light.css" />
+    <Content Include="lib\adminlte\css\skins\skin-purple-light.min.css">
+      <DependentUpon>skin-purple-light.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-purple.css" />
+    <Content Include="lib\adminlte\css\skins\skin-purple.min.css">
+      <DependentUpon>skin-purple.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-red-light.css" />
+    <Content Include="lib\adminlte\css\skins\skin-red-light.min.css">
+      <DependentUpon>skin-red-light.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-red.css" />
+    <Content Include="lib\adminlte\css\skins\skin-red.min.css">
+      <DependentUpon>skin-red.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-yellow-light.css" />
+    <Content Include="lib\adminlte\css\skins\skin-yellow-light.min.css">
+      <DependentUpon>skin-yellow-light.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\skin-yellow.css" />
+    <Content Include="lib\adminlte\css\skins\skin-yellow.min.css">
+      <DependentUpon>skin-yellow.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\css\skins\_all-skins.css" />
+    <Content Include="lib\adminlte\css\skins\_all-skins.min.css">
+      <DependentUpon>_all-skins.css</DependentUpon>
+    </Content>
+    <Content Include="lib\adminlte\img\boxed-bg.jpg" />
+    <Content Include="lib\adminlte\img\boxed-bg.png" />
+    <Content Include="lib\adminlte\js\app.js" />
+    <Content Include="lib\adminlte\js\app.min.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-theme.css.map">
+      <DependentUpon>bootstrap-theme.css</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\css\bootstrap-theme.min.css">
+      <DependentUpon>bootstrap-theme.css</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\css\bootstrap-theme.min.css.map">
+      <DependentUpon>bootstrap-theme.min.css</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.css.map">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\css\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\css\bootstrap.min.css.map">
+      <DependentUpon>bootstrap.min.css</DependentUpon>
+    </Content>
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="lib\bootstrap\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="lib\ckeditor\adapters\jquery.js" />
+    <Content Include="lib\ckeditor\build-config.js" />
+    <Content Include="lib\ckeditor\ckeditor.js" />
+    <Content Include="lib\ckeditor\config.js" />
+    <Content Include="lib\ckeditor\contents.css" />
+    <Content Include="lib\ckeditor\lang\af.js" />
+    <Content Include="lib\ckeditor\lang\ar.js" />
+    <Content Include="lib\ckeditor\lang\bg.js" />
+    <Content Include="lib\ckeditor\lang\bn.js" />
+    <Content Include="lib\ckeditor\lang\bs.js" />
+    <Content Include="lib\ckeditor\lang\ca.js" />
+    <Content Include="lib\ckeditor\lang\cs.js" />
+    <Content Include="lib\ckeditor\lang\cy.js" />
+    <Content Include="lib\ckeditor\lang\da.js" />
+    <Content Include="lib\ckeditor\lang\de-ch.js" />
+    <Content Include="lib\ckeditor\lang\de.js" />
+    <Content Include="lib\ckeditor\lang\el.js" />
+    <Content Include="lib\ckeditor\lang\en-au.js" />
+    <Content Include="lib\ckeditor\lang\en-ca.js" />
+    <Content Include="lib\ckeditor\lang\en-gb.js" />
+    <Content Include="lib\ckeditor\lang\en.js" />
+    <Content Include="lib\ckeditor\lang\eo.js" />
+    <Content Include="lib\ckeditor\lang\es.js" />
+    <Content Include="lib\ckeditor\lang\et.js" />
+    <Content Include="lib\ckeditor\lang\eu.js" />
+    <Content Include="lib\ckeditor\lang\fa.js" />
+    <Content Include="lib\ckeditor\lang\fi.js" />
+    <Content Include="lib\ckeditor\lang\fo.js" />
+    <Content Include="lib\ckeditor\lang\fr-ca.js" />
+    <Content Include="lib\ckeditor\lang\fr.js" />
+    <Content Include="lib\ckeditor\lang\gl.js" />
+    <Content Include="lib\ckeditor\lang\gu.js" />
+    <Content Include="lib\ckeditor\lang\he.js" />
+    <Content Include="lib\ckeditor\lang\hi.js" />
+    <Content Include="lib\ckeditor\lang\hr.js" />
+    <Content Include="lib\ckeditor\lang\hu.js" />
+    <Content Include="lib\ckeditor\lang\id.js" />
+    <Content Include="lib\ckeditor\lang\is.js" />
+    <Content Include="lib\ckeditor\lang\it.js" />
+    <Content Include="lib\ckeditor\lang\ja.js" />
+    <Content Include="lib\ckeditor\lang\ka.js" />
+    <Content Include="lib\ckeditor\lang\km.js" />
+    <Content Include="lib\ckeditor\lang\ko.js" />
+    <Content Include="lib\ckeditor\lang\ku.js" />
+    <Content Include="lib\ckeditor\lang\lt.js" />
+    <Content Include="lib\ckeditor\lang\lv.js" />
+    <Content Include="lib\ckeditor\lang\mk.js" />
+    <Content Include="lib\ckeditor\lang\mn.js" />
+    <Content Include="lib\ckeditor\lang\ms.js" />
+    <Content Include="lib\ckeditor\lang\nb.js" />
+    <Content Include="lib\ckeditor\lang\nl.js" />
+    <Content Include="lib\ckeditor\lang\no.js" />
+    <Content Include="lib\ckeditor\lang\pl.js" />
+    <Content Include="lib\ckeditor\lang\pt-br.js" />
+    <Content Include="lib\ckeditor\lang\pt.js" />
+    <Content Include="lib\ckeditor\lang\ro.js" />
+    <Content Include="lib\ckeditor\lang\ru.js" />
+    <Content Include="lib\ckeditor\lang\si.js" />
+    <Content Include="lib\ckeditor\lang\sk.js" />
+    <Content Include="lib\ckeditor\lang\sl.js" />
+    <Content Include="lib\ckeditor\lang\sq.js" />
+    <Content Include="lib\ckeditor\lang\sr-latn.js" />
+    <Content Include="lib\ckeditor\lang\sr.js" />
+    <Content Include="lib\ckeditor\lang\sv.js" />
+    <Content Include="lib\ckeditor\lang\th.js" />
+    <Content Include="lib\ckeditor\lang\tr.js" />
+    <Content Include="lib\ckeditor\lang\tt.js" />
+    <Content Include="lib\ckeditor\lang\ug.js" />
+    <Content Include="lib\ckeditor\lang\uk.js" />
+    <Content Include="lib\ckeditor\lang\vi.js" />
+    <Content Include="lib\ckeditor\lang\zh-cn.js" />
+    <Content Include="lib\ckeditor\lang\zh.js" />
+    <Content Include="lib\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="lib\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="lib\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="lib\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="lib\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="lib\ckeditor\plugins\icons.png" />
+    <Content Include="lib\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="lib\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="lib\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="lib\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="lib\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="lib\ckeditor\samples\css\samples.css" />
+    <Content Include="lib\ckeditor\samples\img\github-top.png" />
+    <Content Include="lib\ckeditor\samples\img\header-bg.png" />
+    <Content Include="lib\ckeditor\samples\img\header-separator.png" />
+    <Content Include="lib\ckeditor\samples\img\logo.png" />
+    <Content Include="lib\ckeditor\samples\img\navigation-tip.png" />
+    <Content Include="lib\ckeditor\samples\index.html" />
+    <Content Include="lib\ckeditor\samples\js\sample.js" />
+    <Content Include="lib\ckeditor\samples\js\sf.js" />
+    <Content Include="lib\ckeditor\samples\old\ajax.html" />
+    <Content Include="lib\ckeditor\samples\old\api.html" />
+    <Content Include="lib\ckeditor\samples\old\appendto.html" />
+    <Content Include="lib\ckeditor\samples\old\assets\inlineall\logo.png" />
+    <Content Include="lib\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="lib\ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="lib\ckeditor\samples\old\assets\sample.jpg" />
+    <Content Include="lib\ckeditor\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="lib\ckeditor\samples\old\datafiltering.html" />
+    <Content Include="lib\ckeditor\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="lib\ckeditor\samples\old\dialog\dialog.html" />
+    <Content Include="lib\ckeditor\samples\old\divreplace.html" />
+    <Content Include="lib\ckeditor\samples\old\enterkey\enterkey.html" />
+    <Content Include="lib\ckeditor\samples\old\index.html" />
+    <Content Include="lib\ckeditor\samples\old\inlineall.html" />
+    <Content Include="lib\ckeditor\samples\old\inlinebycode.html" />
+    <Content Include="lib\ckeditor\samples\old\inlinetextarea.html" />
+    <Content Include="lib\ckeditor\samples\old\jquery.html" />
+    <Content Include="lib\ckeditor\samples\old\readonly.html" />
+    <Content Include="lib\ckeditor\samples\old\replacebyclass.html" />
+    <Content Include="lib\ckeditor\samples\old\replacebycode.html" />
+    <Content Include="lib\ckeditor\samples\old\sample.css" />
+    <Content Include="lib\ckeditor\samples\old\sample.js" />
+    <Content Include="lib\ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="lib\ckeditor\samples\old\tabindex.html" />
+    <Content Include="lib\ckeditor\samples\old\toolbar\toolbar.html" />
+    <Content Include="lib\ckeditor\samples\old\uicolor.html" />
+    <Content Include="lib\ckeditor\samples\old\uilanguages.html" />
+    <Content Include="lib\ckeditor\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="lib\ckeditor\samples\old\xhtmlstyle.html" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\index.html" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="lib\ckeditor\skins\moono\dialog.css" />
+    <Content Include="lib\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="lib\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="lib\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="lib\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="lib\ckeditor\skins\moono\editor.css" />
+    <Content Include="lib\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="lib\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="lib\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="lib\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="lib\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="lib\ckeditor\skins\moono\icons.png" />
+    <Content Include="lib\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="lib\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="lib\ckeditor\skins\moono\images\close.png" />
+    <Content Include="lib\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="lib\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="lib\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="lib\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="lib\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="lib\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="lib\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="lib\ckeditor\skins\moono\images\spinner.gif" />
+    <Content Include="lib\ckeditor\styles.js" />
+    <Content Include="lib\concerti\js\alert.js" />
+    <Content Include="lib\concerti\js\Concerti.Utils.ConvertToSlug.js" />
+    <Content Include="lib\concerti\js\dropdown.js" />
+    <Content Include="lib\font-awesome\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.css.map">
+      <DependentUpon>font-awesome.css</DependentUpon>
+    </Content>
+    <Content Include="lib\font-awesome\css\font-awesome.min.css">
+      <DependentUpon>font-awesome.css</DependentUpon>
+    </Content>
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\jquery\jquery.js" />
+    <Content Include="lib\jquery\jquery.min.js">
+      <DependentUpon>jquery.js</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\Users\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\ResetPassword.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Alerts.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Index.cshtml" />
+    <Content Include="lib\ckeditor\CHANGES.md" />
+    <Content Include="lib\ckeditor\LICENSE.md" />
+    <Content Include="lib\ckeditor\README.md" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="lib\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="lib\ckeditor\skins\moono\readme.md" />
+    <Content Include="Areas\Admin\Views\Pages\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Create.cshtml" />
+    <None Include="lib\jquery\jquery.min.map">
+      <DependentUpon>jquery.js</DependentUpon>
+    </None>
+    <Content Include="js\main.js" />
+    <Content Include="lib\normalize\normalize.css" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Models\Concerti.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Concerti.edmx</DependentUpon>
+      <LastGenOutput>Concerti.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Concerti.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Concerti.edmx</DependentUpon>
+      <LastGenOutput>Concerti.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="App_Start\UnityWebApiActivator.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BlogPostsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Models\Alert.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Pages\CreateViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Pages\EditViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Settings\EditViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Users\CreateViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Users\EditViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\Users\ResetPasswordViewModel.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Models\BlogPost.cs">
+      <DependentUpon>Concerti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Page.cs">
+      <DependentUpon>Concerti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Services\BlogPostService.cs" />
+    <Compile Include="Services\Interfaces\IBlogPostService.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Core\User\CustomPrincipal.cs" />
+    <Compile Include="Core\User\CustomPrincipalSerializeModel.cs" />
+    <Compile Include="Core\User\ICustomPrincipal.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Concerti.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Concerti.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Concerti.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Concerti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Concerti.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Concerti.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>Concerti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Setting.cs">
+      <DependentUpon>Concerti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SettingOption.cs">
+      <DependentUpon>Concerti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Concerti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Interfaces\IPageService.cs" />
+    <Compile Include="Services\Interfaces\ISettingService.cs" />
+    <Compile Include="Services\Interfaces\IUserService.cs" />
+    <Compile Include="Services\PageService.cs" />
+    <Compile Include="Services\SettingService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="ViewModels\Account\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Pages\PageViewModel.cs" />
+    <Compile Include="Views\BaseViewPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="sass\main\main.scss" />
+    <Content Include="sass\main\base\base.scss" />
+    <Content Include="sass\main\layout\layout.scss" />
+    <Content Include="sass\main\modules\modules.scss" />
+    <Content Include="sass\main\vendors\vendors.scss" />
+    <Content Include="package.json" />
+    <Content Include="lib\bourbon\addons\_border-color.scss" />
+    <Content Include="lib\bourbon\addons\_border-radius.scss" />
+    <Content Include="lib\bourbon\addons\_border-style.scss" />
+    <Content Include="lib\bourbon\addons\_border-width.scss" />
+    <Content Include="lib\bourbon\addons\_buttons.scss" />
+    <Content Include="lib\bourbon\addons\_clearfix.scss" />
+    <Content Include="lib\bourbon\addons\_ellipsis.scss" />
+    <Content Include="lib\bourbon\addons\_font-stacks.scss" />
+    <Content Include="lib\bourbon\addons\_hide-text.scss" />
+    <Content Include="lib\bourbon\addons\_margin.scss" />
+    <Content Include="lib\bourbon\addons\_padding.scss" />
+    <Content Include="lib\bourbon\addons\_position.scss" />
+    <Content Include="lib\bourbon\addons\_prefixer.scss" />
+    <Content Include="lib\bourbon\addons\_retina-image.scss" />
+    <Content Include="lib\bourbon\addons\_size.scss" />
+    <Content Include="lib\bourbon\addons\_text-inputs.scss" />
+    <Content Include="lib\bourbon\addons\_timing-functions.scss" />
+    <Content Include="lib\bourbon\addons\_triangle.scss" />
+    <Content Include="lib\bourbon\addons\_word-wrap.scss" />
+    <Content Include="lib\bourbon\css3\_animation.scss" />
+    <Content Include="lib\bourbon\css3\_appearance.scss" />
+    <Content Include="lib\bourbon\css3\_backface-visibility.scss" />
+    <Content Include="lib\bourbon\css3\_background-image.scss" />
+    <Content Include="lib\bourbon\css3\_background.scss" />
+    <Content Include="lib\bourbon\css3\_border-image.scss" />
+    <Content Include="lib\bourbon\css3\_calc.scss" />
+    <Content Include="lib\bourbon\css3\_columns.scss" />
+    <Content Include="lib\bourbon\css3\_filter.scss" />
+    <Content Include="lib\bourbon\css3\_flex-box.scss" />
+    <Content Include="lib\bourbon\css3\_font-face.scss" />
+    <Content Include="lib\bourbon\css3\_font-feature-settings.scss" />
+    <Content Include="lib\bourbon\css3\_hidpi-media-query.scss" />
+    <Content Include="lib\bourbon\css3\_hyphens.scss" />
+    <Content Include="lib\bourbon\css3\_image-rendering.scss" />
+    <Content Include="lib\bourbon\css3\_keyframes.scss" />
+    <Content Include="lib\bourbon\css3\_linear-gradient.scss" />
+    <Content Include="lib\bourbon\css3\_perspective.scss" />
+    <Content Include="lib\bourbon\css3\_placeholder.scss" />
+    <Content Include="lib\bourbon\css3\_radial-gradient.scss" />
+    <Content Include="lib\bourbon\css3\_selection.scss" />
+    <Content Include="lib\bourbon\css3\_text-decoration.scss" />
+    <Content Include="lib\bourbon\css3\_transform.scss" />
+    <Content Include="lib\bourbon\css3\_transition.scss" />
+    <Content Include="lib\bourbon\css3\_user-select.scss" />
+    <Content Include="lib\bourbon\functions\_assign-inputs.scss" />
+    <Content Include="lib\bourbon\functions\_contains-falsy.scss" />
+    <Content Include="lib\bourbon\functions\_contains.scss" />
+    <Content Include="lib\bourbon\functions\_is-length.scss" />
+    <Content Include="lib\bourbon\functions\_is-light.scss" />
+    <Content Include="lib\bourbon\functions\_is-number.scss" />
+    <Content Include="lib\bourbon\functions\_is-size.scss" />
+    <Content Include="lib\bourbon\functions\_modular-scale.scss" />
+    <Content Include="lib\bourbon\functions\_px-to-em.scss" />
+    <Content Include="lib\bourbon\functions\_px-to-rem.scss" />
+    <Content Include="lib\bourbon\functions\_shade.scss" />
+    <Content Include="lib\bourbon\functions\_strip-units.scss" />
+    <Content Include="lib\bourbon\functions\_tint.scss" />
+    <Content Include="lib\bourbon\functions\_transition-property-name.scss" />
+    <Content Include="lib\bourbon\functions\_unpack.scss" />
+    <Content Include="lib\bourbon\helpers\_convert-units.scss" />
+    <Content Include="lib\bourbon\helpers\_directional-values.scss" />
+    <Content Include="lib\bourbon\helpers\_font-source-declaration.scss" />
+    <Content Include="lib\bourbon\helpers\_gradient-positions-parser.scss" />
+    <Content Include="lib\bourbon\helpers\_linear-angle-parser.scss" />
+    <Content Include="lib\bourbon\helpers\_linear-gradient-parser.scss" />
+    <Content Include="lib\bourbon\helpers\_linear-positions-parser.scss" />
+    <Content Include="lib\bourbon\helpers\_linear-side-corner-parser.scss" />
+    <Content Include="lib\bourbon\helpers\_radial-arg-parser.scss" />
+    <Content Include="lib\bourbon\helpers\_radial-gradient-parser.scss" />
+    <Content Include="lib\bourbon\helpers\_radial-positions-parser.scss" />
+    <Content Include="lib\bourbon\helpers\_render-gradients.scss" />
+    <Content Include="lib\bourbon\helpers\_shape-size-stripper.scss" />
+    <Content Include="lib\bourbon\helpers\_str-to-num.scss" />
+    <Content Include="lib\bourbon\settings\_asset-pipeline.scss" />
+    <Content Include="lib\bourbon\settings\_prefixer.scss" />
+    <Content Include="lib\bourbon\settings\_px-to-em.scss" />
+    <Content Include="lib\bourbon\_bourbon-deprecated-upcoming.scss" />
+    <Content Include="lib\bourbon\_bourbon.scss" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Dashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
+    <None Include="bundleconfig.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="sass\main\base\_vars.scss" />
+    <Content Include="sass\main\base\_defaults.scss" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <EntityDeploy Include="Models\Concerti.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Concerti.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Concerti.edmx.diagram">
+      <DependentUpon>Concerti.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Pages\Index.cshtml" />
+    <Content Include="Views\Shared\_Concerti.cshtml" />
+    <Content Include="sass\concerti\base\_defaults.scss" />
+    <Content Include="sass\concerti\base\_vars.scss" />
+    <Content Include="sass\concerti\base\base.scss" />
+    <Content Include="sass\concerti\layout\layout.scss" />
+    <Content Include="sass\concerti\modules\modules.scss" />
+    <Content Include="sass\concerti\vendors\vendors.scss" />
+    <Content Include="sass\concerti\concerti.scss" />
+    <Content Include="sass\concerti\layout\_main.scss" />
+    <Content Include="lib\concerti\sass\_form.scss" />
+    <Content Include="lib\concerti\sass\_button.scss" />
+    <Content Include="lib\font-awesome\scss\font-awesome.scss" />
+    <Content Include="lib\font-awesome\scss\_animated.scss" />
+    <Content Include="lib\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="lib\font-awesome\scss\_core.scss" />
+    <Content Include="lib\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="lib\font-awesome\scss\_icons.scss" />
+    <Content Include="lib\font-awesome\scss\_larger.scss" />
+    <Content Include="lib\font-awesome\scss\_list.scss" />
+    <Content Include="lib\font-awesome\scss\_mixins.scss" />
+    <Content Include="lib\font-awesome\scss\_path.scss" />
+    <Content Include="lib\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="lib\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="lib\font-awesome\scss\_stacked.scss" />
+    <Content Include="lib\font-awesome\scss\_variables.scss" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="sass\admin\admin.scss" />
+    <Content Include="sass\admin\base\base.scss" />
+    <Content Include="sass\admin\base\_defaults.scss" />
+    <Content Include="sass\admin\base\_vars.scss" />
+    <Content Include="sass\admin\layout\layout.scss" />
+    <Content Include="sass\admin\layout\_header.scss" />
+    <Content Include="sass\admin\layout\_main.scss" />
+    <Content Include="sass\admin\layout\_nav.scss" />
+    <Content Include="sass\admin\modules\modules.scss" />
+    <Content Include="sass\admin\modules\_dropdown.scss" />
+    <Content Include="sass\admin\modules\_table.scss" />
+    <Content Include="sass\admin\vendors\vendors.scss" />
+    <Content Include="sass\admin\modules\_alert.scss" />
+    <Content Include="lib\susy\susy\_su.scss" />
+    <Content Include="lib\susy\_su.scss" />
+    <Content Include="lib\susy\_susy.scss" />
+    <Content Include="lib\susy\_susyone.scss" />
+    <Content Include="lib\susy\susy\language\susyone\_background.scss" />
+    <Content Include="lib\susy\susy\language\susyone\_functions.scss" />
+    <Content Include="lib\susy\susy\language\susyone\_grid.scss" />
+    <Content Include="lib\susy\susy\language\susyone\_isolation.scss" />
+    <Content Include="lib\susy\susy\language\susyone\_margin.scss" />
+    <Content Include="lib\susy\susy\language\susyone\_media.scss" />
+    <Content Include="lib\susy\susy\language\susyone\_padding.scss" />
+    <Content Include="lib\susy\susy\language\susyone\_settings.scss" />
+    <Content Include="lib\susy\susy\language\susy\_background.scss" />
+    <Content Include="lib\susy\susy\language\susy\_bleed.scss" />
+    <Content Include="lib\susy\susy\language\susy\_box-sizing.scss" />
+    <Content Include="lib\susy\susy\language\susy\_breakpoint-plugin.scss" />
+    <Content Include="lib\susy\susy\language\susy\_container.scss" />
+    <Content Include="lib\susy\susy\language\susy\_context.scss" />
+    <Content Include="lib\susy\susy\language\susy\_gallery.scss" />
+    <Content Include="lib\susy\susy\language\susy\_grids.scss" />
+    <Content Include="lib\susy\susy\language\susy\_gutters.scss" />
+    <Content Include="lib\susy\susy\language\susy\_isolate.scss" />
+    <Content Include="lib\susy\susy\language\susy\_margins.scss" />
+    <Content Include="lib\susy\susy\language\susy\_padding.scss" />
+    <Content Include="lib\susy\susy\language\susy\_rows.scss" />
+    <Content Include="lib\susy\susy\language\susy\_settings.scss" />
+    <Content Include="lib\susy\susy\language\susy\_span.scss" />
+    <Content Include="lib\susy\susy\language\susy\_validation.scss" />
+    <Content Include="lib\susy\susy\language\_susy.scss" />
+    <Content Include="lib\susy\susy\language\_susyone.scss" />
+    <Content Include="lib\susy\susy\output\float\_container.scss" />
+    <Content Include="lib\susy\susy\output\float\_end.scss" />
+    <Content Include="lib\susy\susy\output\float\_isolate.scss" />
+    <Content Include="lib\susy\susy\output\float\_span.scss" />
+    <Content Include="lib\susy\susy\output\shared\_background.scss" />
+    <Content Include="lib\susy\susy\output\shared\_container.scss" />
+    <Content Include="lib\susy\susy\output\shared\_direction.scss" />
+    <Content Include="lib\susy\susy\output\shared\_inspect.scss" />
+    <Content Include="lib\susy\susy\output\shared\_margins.scss" />
+    <Content Include="lib\susy\susy\output\shared\_output.scss" />
+    <Content Include="lib\susy\susy\output\shared\_padding.scss" />
+    <Content Include="lib\susy\susy\output\support\_background.scss" />
+    <Content Include="lib\susy\susy\output\support\_box-sizing.scss" />
+    <Content Include="lib\susy\susy\output\support\_clearfix.scss" />
+    <Content Include="lib\susy\susy\output\support\_prefix.scss" />
+    <Content Include="lib\susy\susy\output\support\_rem.scss" />
+    <Content Include="lib\susy\susy\output\support\_support.scss" />
+    <Content Include="lib\susy\susy\output\_float.scss" />
+    <Content Include="lib\susy\susy\output\_shared.scss" />
+    <Content Include="lib\susy\susy\output\_support.scss" />
+    <Content Include="lib\susy\susy\su\_grid.scss" />
+    <Content Include="lib\susy\susy\su\_settings.scss" />
+    <Content Include="lib\susy\susy\su\_utilities.scss" />
+    <Content Include="lib\susy\susy\su\_validation.scss" />
+    <Content Include="sass\admin\modules\_grid.scss" />
+    <Content Include="Views\Pages\Page.cshtml" />
+    <Content Include="Views\Pages\NotFound.cshtml" />
+    <Content Include="Views\Pages\ServerError.cshtml" />
+    <Content Include="Views\Pages\SiteNavigation.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\BlogPosts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="lib\concerti\ts\Utils\ConvertToSlug.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>17064</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:17064/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

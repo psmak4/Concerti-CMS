@@ -1,0 +1,35 @@
+﻿@model Concerti.Website.ViewModels.Account.LoginViewModel
+
+@{
+	ViewBag.Title = "Login";
+	Layout = "~/Views/Shared/_Concerti.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form form--has-shadow form--has-padding">
+		<h1 class="form__title">Concerti</h1>
+
+		@Html.ValidationSummary(true, "", new { @class = "form__errors" })
+
+		<div class="form__body">
+			<div class="form__row">
+				@Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "form__label" })
+				@Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form__input" } })
+				@Html.ValidationMessageFor(model => model.Username, "", new { @class = "form__field-error" })
+			</div>
+
+			<div class="form__row">
+				@Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "form__label" })
+				@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form__input" } })
+				@Html.ValidationMessageFor(model => model.Password, "", new { @class = "form__field-error" })
+			</div>
+
+			<div class="form__row">
+				<input type="submit" value="Login" class="button button--full button--primary" />
+			</div>
+		</div>
+	</div>
+}

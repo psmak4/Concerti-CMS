@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Concerti.Website.Models.User>
+
+@{
+	ViewBag.Title = "Users";
+}
+
+<div class="main__tools">
+	<a href="@Url.RouteUrl("AdminUserNew")" class="button button--primary">Add New <span class="button__icon fa fa-fw fa-plus"></span></a>
+</div>
+
+<table class="table">
+	<thead class="table__head">
+		<tr class="table__head-row">
+			<th class="table__head-cell">Username</th>
+			<th class="table__head-cell">Email</th>
+			<th class="table__head-cell">First Name</th>
+			<th class="table__head-cell">Last Name</th>
+			<th class="table__head-cell table__head-cell--text-center">Date Created</th>
+			<th class="table__head-cell"></th>
+		</tr>
+	</thead>
+
+	<tbody class="table__body">
+		@foreach (var item in Model)
+		{
+			<tr class="table__body-row">
+				<td class="table__body-cell">@item.Username</td>
+				<td class="table__body-cell">@item.Email</td>
+				<td class="table__body-cell">@item.FirstName</td>
+				<td class="table__body-cell">@item.LastName</td>
+				<td class="table__body-cell table__body-cell--text-center"><time datetime="@item.DateCreated.ToString("yyyy-MM-ddTHH:mm:ssZ")">@item.DateCreated.ToShortDateString() @item.DateCreated.ToShortTimeString()</time></td>
+				<td class="table__body-cell table__body-cell--text-right">
+					<div class="dropdown dropdown--right">
+						<button class="dropdown__button"><span class="dropdown__button-icon fa fa-fw fa-gear"></span><span class="dropdown__button-icon fa fa-fw fa-angle-down"></span></button>
+						<div class="dropdown__content">
+							<a class="dropdown__link" href="@Url.RouteUrl("AdminUserEdit", new { userId = item.UserId })">Edit</a>
+							<a class="dropdown__link" href="@Url.RouteUrl("AdminUserResetPassword", new { userId = item.UserId })">Reset Password</a>
+							<a class="dropdown__link" href="@Url.RouteUrl("AdminUserDelete", new { userId = item.UserId })" onclick="return confirm('Are you sure you wish to delete this user?');">Delete</a>
+						</div>
+					</div>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

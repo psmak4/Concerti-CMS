@@ -1,0 +1,21 @@
+﻿.header {
+	background-color: $header-background-color;
+	@include flex(0 0 0px);
+
+	&__logo {
+		padding: 1rem 2rem;
+		background-color: $header-logo-background-color;
+		font-family: $header-logo-font-family;
+		font-size: 1.6rem;
+		white-space: nowrap;
+
+		&-link {
+			color: $header-logo-link-font-color;
+			text-decoration: none;
+		}
+	}
+
+	&__nav {
+
+	}
+}

@@ -1,0 +1,66 @@
+﻿$primary-color: #3E92A3;
+$secondary-color: #353940;
+$tertiary-color: #DFE0D4;
+$accent-color: #FF5335;
+
+$montserrat: 'Montserrat', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+$pacifico: 'Pacifico', cursive;
+
+/* defaults */
+$body-background-color: $tertiary-color;
+$body-font-color: #444;
+$body-font-family: $open-sans;
+
+/* layout */
+$header-background-color: $primary-color;
+
+$header-logo-background-color: $secondary-color;
+$header-logo-font-family: $pacifico;
+$header-logo-link-font-color: $accent-color;
+
+$nav-link-font-color: #FFF;
+$nav-link-hover-background-color: lighten($header-background-color, 5%);
+$nav-link-hover-font-color: #FFF;
+$nav-link-hover-border-color: $accent-color;
+
+$main-background-color: #FFF;
+$main-font-size: 1rem;
+$main-title-font-color: $primary-color;
+$main-title-font-family: $montserrat;
+$main-link-font-color: $accent-color;
+
+/* modules */
+$button-font-family: $montserrat;
+$button-font-color: #444;
+$button-hover-font-color: $accent-color;
+
+$button-primary-background-color: $primary-color;
+$button-primary-font-color: #FFF;
+$button-primary-hover-background-color: lighten($button-primary-background-color, 5%);
+$button-primary-hover-font-color: #FFF;
+
+$button-secondary-background-color: $secondary-color;
+$button-secondary-font-color: #FFF;
+
+$button-tertiary-background-color: $tertiary-color;
+$button-tertiary-font-color: #444;
+
+$button-accent-background-color: $accent-color;
+$button-accent-font-color: #FFF;
+
+$dropdown-border-color: #E8E8E8;
+$dropdown-button-icon-font-size: 1.4rem;
+
+$form-background-color: #FFF;
+$form-title-font-color: $accent-color;
+$form-input-border-color: #DFE0D4;
+$form-input-focus-border-color: $accent-color;
+
+$table-head-background-color: $secondary-color;
+$table-head-font-color: #FFF;
+$table-head-font-family: $montserrat;
+$table-head-font-size: 1rem;
+
+$table-head-border-color: $primary-color;
+$table-body-row-alt-background-color: #F8F8F8;

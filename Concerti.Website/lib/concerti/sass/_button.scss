@@ -1,0 +1,68 @@
+﻿.button {
+	display: inline-block;
+	padding: 0.75rem 1rem;
+	border: none;
+	border-radius: 4px;
+	color: $button-font-color !important;
+	cursor: pointer;
+	font-family: $button-font-family;
+	font-size: 1rem;
+
+	&:hover {
+		text-decoration: none !important;
+		color: $button-hover-font-color !important;
+	}
+
+	&--small {
+		padding: 0.6rem 0.8rem;
+		font-size: 0.9rem;
+	}
+
+	&--full {
+		width: 100%;
+	}
+
+	&--primary {
+		background-color: $button-primary-background-color;
+		color: $button-primary-font-color !important;
+
+		&:hover, &:focus {
+			background-color: $button-primary-hover-background-color;
+			color: $button-primary-hover-font-color !important;
+		}
+	}
+
+	&--secondary {
+		background-color: $button-secondary-background-color;
+		color: $button-secondary-font-color !important;
+
+		&:hover, &:focus {
+			background-color: lighten($button-secondary-background-color, 5%);
+			color: $button-secondary-font-color !important;
+		}
+	}
+
+	&--tertiary {
+		background-color: $button-tertiary-background-color;
+		color: $button-tertiary-font-color !important;
+
+		&:hover, &:focus {
+			background-color: lighten($button-tertiary-background-color, 5%);
+			color: $button-tertiary-font-color !important;
+		}
+	}
+
+	&--accent {
+		background-color: $button-accent-background-color;
+		color: $button-accent-font-color !important;
+
+		&:hover, &:focus {
+			background-color: lighten($button-accent-background-color, 5%);
+			color: $button-accent-font-color !important;
+		}
+	}
+
+	&__icon {
+
+	}
+}

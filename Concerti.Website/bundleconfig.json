@@ -1,0 +1,29 @@
+[
+	{
+		"outputFileName": "js/main.min.js",
+		"inputFiles": [
+			"js/main.js"
+		]
+	},
+	{
+		"outputFileName": "js/concerti.min.js",
+		"inputFiles": [
+			"js/concerti.js"
+		]
+	},
+	{
+		"outputFileName": "js/admin.js",
+		"inputFiles": [
+			"lib/jquery/jquery.min.js",
+			"lib/concerti/js/Concerti.Utils.ConvertToSlug.js",
+			"lib/concerti/js/alert.js",
+			"lib/concerti/js/dropdown.js"
+		]
+	},
+	{
+		"outputFileName": "css/admin.min.css",
+		"inputFiles": [
+			"css/admin.css"
+		]
+	}
+]

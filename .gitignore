@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/packages
+/Concerti.Database/bin/Debug
+/Concerti.Database/obj/Debug
+*.dbmdl
+/Concerti.Database/Script.PostDeployment.sql
+/Concerti.Database/local.publish.xml
+/Database
+/Concerti.Website/node_modules
+/Concerti.Website/bin
+/Concerti.Website/obj/Debug

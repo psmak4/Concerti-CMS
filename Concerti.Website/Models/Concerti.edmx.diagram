@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c94c8e4076749fa911641e94d7bde7b" Name="Diagram1">
+        <EntityTypeShape EntityType="ConcertiModel.Role" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="ConcertiModel.User" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="ConcertiModel.UserRoles" />
+        <EntityTypeShape EntityType="ConcertiModel.SettingOption" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="ConcertiModel.Setting" Width="1.5" PointX="0.75" PointY="4.875" />
+        <AssociationConnector Association="ConcertiModel.FK_SettingOptions_Settings" />
+        <EntityTypeShape EntityType="ConcertiModel.Page" Width="1.5" PointX="5.25" PointY="1" />
+        <AssociationConnector Association="ConcertiModel.FK_Pages_Users_Created" />
+        <AssociationConnector Association="ConcertiModel.FK_Pages_Users_LastUpdated" />
+        <EntityTypeShape EntityType="ConcertiModel.BlogPost" Width="1.5" PointX="5.25" PointY="5.25" />
+        <AssociationConnector Association="ConcertiModel.FK_BlogPosts_Users_Created" />
+        <AssociationConnector Association="ConcertiModel.FK_BlogPosts_Users_LastUpdated" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

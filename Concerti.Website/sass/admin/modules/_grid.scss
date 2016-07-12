@@ -1,0 +1,55 @@
+﻿$susy: (
+	columns: 12,
+	gutters: 1/4,
+	global-box-sizing: border-box
+);
+
+.grid {
+	@include display(flex);
+
+	&--sidebar-right {
+
+		.content {
+			width: 61.8%;
+			padding: 0 1rem 0 0;
+			@include order(1);
+		}
+
+		.sidebar {
+			width: 38.2%;
+			padding: 0 0 0 1rem;
+			@include order(2);
+		}
+	}
+
+	&--sidebar-left {
+
+		.content {
+			width: 61.8%;
+			padding: 0 0 0 1rem;
+			@include order(2);
+		}
+
+		.sidebar {
+			width: 38.2%;
+			padding: 0 1rem 0 0;
+			@include order(1);
+		}
+	}
+
+
+}
+
+/*.wrap {
+	@include container;
+
+	.content {
+		margin-bottom: 2rem;
+		@include span(8 of 12);
+	}
+
+	.sidebar {
+		margin-bottom: 2rem;
+		@include span(4 of 12 last);
+	}
+}*/

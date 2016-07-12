@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Concerti.Website.Models.Setting>
+
+@{
+	ViewBag.Title = "Settings";
+}
+
+<table class="table">
+	<thead class="table__head">
+		<tr class="table__head-row">
+			<th class="table__head-cell">Name</th>
+			<th class="table__head-cell">Value</th>
+			<th class="table__head-cell"></th>
+		</tr>
+	</thead>
+	<tbody class="table__body">
+		@foreach (var setting in Model)
+		{
+			<tr class="table__body-row">
+				<td class="table__body-cell">@setting.Name</td>
+				<td class="table__body-cell">@setting.Value</td>
+				<td class="table__body-cell table__body-cell--text-right">
+					<div class="dropdown dropdown--right">
+						<button class="dropdown__button"><span class="dropdown__button-icon fa fa-fw fa-gear"></span><span class="dropdown__button-icon fa fa-fw fa-angle-down"></span></button>
+						<div class="dropdown__content">
+							<a class="dropdown__link" href="@Url.RouteUrl("AdminSettingEdit", new { settingId = setting.SettingId })">Edit</a>
+						</div>
+					</div>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

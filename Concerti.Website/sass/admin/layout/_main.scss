@@ -1,0 +1,37 @@
+﻿.main {
+	position: relative;
+	max-width: 80rem;
+	margin: 0 auto;
+	background-color: $main-background-color;
+	font-size: $main-font-size;
+	@include flex(1 1 0px);
+
+	&__title {
+		margin: 0;
+		padding: 1rem 2rem;
+		color: $main-title-font-color;
+		font-family: $main-title-font-family;
+		font-size: 3rem;
+		font-weight: 400;
+	}
+
+	&__tools {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 1rem 2rem;
+	}
+
+	&__body {
+		padding: 1rem 2rem;
+	}
+
+	a {
+		color: $main-link-font-color;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
