@@ -55,18 +55,5 @@
 }
 
 @section scripts {
-	<script src="~/lib/ckeditor/ckeditor.js"></script>
-	<script>
-		$(function () {
-			var title = $('#Title');
-			var slug = $('#Slug');
-
-			title.focus().keyup(function (event) {
-				var titleValue = $(this).val();
-				slug.val(Concerti.Utils.ConvertToSlug(titleValue));
-			});
-
-			CKEDITOR.replace('Content');
-		});
-	</script>
+	<script>require(['/js/admin/pages/edit.js']);</script>
 }
