@@ -26,6 +26,12 @@
 			color: $nav-link-hover-font-color;
 		}
 
+		&--active {
+			border-left-color: $nav-link-active-border-color;
+			background-color: $nav-link-active-background-color;
+			color: $nav-link-active-font-color;
+		}
+
 		&-icon {
 			margin: 0 1rem 0 0;
 		}

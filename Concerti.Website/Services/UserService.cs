@@ -22,7 +22,7 @@ namespace Concerti.Website.Services
 		{
 			var user = GetUser(username);
 			if (user != null)
-				throw new Exception("Username already taken");
+				throw new Exception("Username", new Exception(UserErrors.UsernameTaken));
 
 			var workFactor = ConfigurationManager.AppSettings["BCryptWorkFactor"];
 			user = new User()
@@ -46,7 +46,7 @@ namespace Concerti.Website.Services
 		{
 			var user = GetUser(userId);
 			if (user == null)
-				throw new Exception("Invalid user id given");
+				throw new Exception(UserErrors.InvalidUserId);
 
 			user.IsActive = false;
 
@@ -91,7 +91,7 @@ namespace Concerti.Website.Services
 		{
 			var user = GetUser(userId);
 			if (user == null)
-				throw new Exception("Invalid user id given");
+				throw new Exception(UserErrors.InvalidUserId);
 
 			var workFactor = ConfigurationManager.AppSettings["BCryptWorkFactor"];
 			user.Password = BCrypt.Net.BCrypt.HashPassword(password, int.Parse(workFactor));
@@ -105,7 +105,7 @@ namespace Concerti.Website.Services
 		{
 			var user = GetUser(userId);
 			if (user == null)
-				throw new Exception("Invalid user id given");
+				throw new Exception(UserErrors.InvalidUserId);
 
 			user.Email = email;
 			user.FirstName = firstName;
@@ -115,5 +115,11 @@ namespace Concerti.Website.Services
 
 			return user;
 		}
+	}
+
+	class UserErrors
+	{
+		public const string InvalidUserId = "Invalid user id given";
+		public const string UsernameTaken = "Username already taken";
 	}
 }

@@ -20,9 +20,14 @@ $header-logo-font-family: $pacifico;
 $header-logo-link-font-color: $accent-color;
 
 $nav-link-font-color: #FFF;
+
 $nav-link-hover-background-color: lighten($header-background-color, 5%);
 $nav-link-hover-font-color: #FFF;
 $nav-link-hover-border-color: $accent-color;
+
+$nav-link-active-background-color: darken($header-background-color, 5%);
+$nav-link-active-font-color: #FFF;
+$nav-link-active-border-color: $accent-color;
 
 $main-background-color: #FFF;
 $main-font-size: 1rem;

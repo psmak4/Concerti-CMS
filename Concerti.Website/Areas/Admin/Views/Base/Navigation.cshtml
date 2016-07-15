@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Concerti.Website.Areas.Admin.ViewModels.Base.NavigationViewModel>
+
+<ul class="nav__items">
+	@foreach (var link in Model)
+	{
+		<li class="nav__item"><a class="nav__link @link.LinkCssClass" href="@link.LinkUrl"><i class="nav__link-icon fa fa-fw fa-@link.IconCssClass"></i>@link.Text</a></li>
+	}
+</ul>

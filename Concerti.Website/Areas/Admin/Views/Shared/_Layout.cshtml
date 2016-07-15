@@ -16,13 +16,7 @@
 		</div>
 
 		<nav class="header__nav nav">
-			<ul class="nav__items">
-				<li class="nav__item"><a class="nav__link" href="@Url.RouteUrl("AdminDashboard")"><i class="nav__link-icon fa fa-fw fa-dashboard"></i>Dashboard</a></li>
-				<li class="nav__item"><a class="nav__link" href="@Url.RouteUrl("AdminPagesList")"><i class="nav__link-icon fa fa-fw fa-file"></i>Pages</a></li>
-				<li class="nav__item"><a class="nav__link" href="@Url.RouteUrl("AdminUsersList")"><i class="nav__link-icon fa fa-fw fa-users"></i>Users</a></li>
-				<li class="nav__item"><a class="nav__link" href="@Url.RouteUrl("AdminSettingsList")"><i class="nav__link-icon fa fa-fw fa-cogs"></i>Settings</a></li>
-				<li class="nav__item"><a class="nav__link" href="@Url.RouteUrl("Logout")"><i class="nav__link-icon fa fa-fw fa-sign-out"></i>Logout</a></li>
-			</ul>
+			@Html.Action("Navigation", "Base")
 		</nav>
 	</header>
 
@@ -30,7 +24,8 @@
 		<h1 class="main__title">@ViewBag.Title</h1>
 
 		<div class="main__body">
-			@{ Html.RenderPartial("_Alerts"); }
+			@Html.Action("Alerts", "Base")
+
 
 			@RenderBody()
 		</div>

@@ -58,7 +58,7 @@ namespace Concerti.Website.Services
 		{
 			var setting = GetSetting(settingId);
 			if (setting == null)
-				throw new Exception("Invalid setting ide given");
+				throw new Exception(SettingErrors.InvalidSettingId);
 
 			setting.Value = value;
 
@@ -66,5 +66,10 @@ namespace Concerti.Website.Services
 
 			return setting;
 		}
+	}
+
+	class SettingErrors
+	{
+		public const string InvalidSettingId = "Invalid setting id given";
 	}
 }

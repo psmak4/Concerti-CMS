@@ -1,7 +1,6 @@
-﻿@using Concerti.Website.Areas.Admin.Models;
+﻿@model IEnumerable<Concerti.Website.Areas.Admin.Models.Alert>
 
-@{ var alerts = TempData.ContainsKey(Alert.TempDataKey) ? (List<Alert>)TempData[Alert.TempDataKey] : new List<Alert>(); }
-@foreach (var alert in alerts)
+@foreach (var alert in Model)
 {
 	<div class="alert alert--@alert.AlertType">
 		@alert.Message

@@ -56,7 +56,10 @@ namespace Concerti.Website.Areas.Admin.Controllers
 				}
 				catch (Exception ex)
 				{
-					ModelState.AddModelError("", ex.Message);
+					if (ex.InnerException != null)
+						ModelState.AddModelError(ex.Message, ex.InnerException.Message);
+					else
+						ModelState.AddModelError("", ex.Message);
 				}
 			}
 

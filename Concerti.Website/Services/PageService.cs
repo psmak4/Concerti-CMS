@@ -19,7 +19,11 @@ namespace Concerti.Website.Services
 
 		public Page CreatePage(string title, string slug, string content, bool isActive, bool displayTitle, int createdBy)
 		{
-			var page = new Page()
+			var page = GetPage(slug);
+			if (page != null)
+				throw new Exception("Slug", new Exception(PageErrors.SlugExists));
+
+			page = new Page()
 			{
 				Title = title,
 				Slug = slug,
@@ -40,7 +44,7 @@ namespace Concerti.Website.Services
 		{
 			var page = GetPage(pageId);
 			if (page == null)
-				throw new Exception("Invalid page id  given");
+				throw new Exception(PageErrors.InvalidPageId);
 
 			context.Pages.Remove(page);
 
@@ -84,7 +88,14 @@ namespace Concerti.Website.Services
 		{
 			var page = GetPage(pageId);
 			if (page == null)
-				throw new Exception("Invalid page id given");
+				throw new Exception(PageErrors.InvalidPageId);
+
+			if (!page.Slug.Equals(slug, StringComparison.OrdinalIgnoreCase))
+			{
+				var slugPage = GetPage(slug);
+				if (slugPage == null)
+					throw new Exception("Slug", new Exception(PageErrors.SlugExists));
+			}
 
 			page.Title = title;
 			page.Slug = slug;
@@ -98,5 +109,11 @@ namespace Concerti.Website.Services
 
 			return page;
 		}
+	}
+
+	class PageErrors
+	{
+		public const string InvalidPageId = "Invalid page id given";
+		public const string SlugExists = "A page already exists with that slug";
 	}
 }
