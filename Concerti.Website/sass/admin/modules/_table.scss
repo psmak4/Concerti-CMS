@@ -3,7 +3,6 @@
 	border-collapse: collapse;
 
 	&__head {
-		border-bottom: 0.25rem solid $table-head-border-color;
 		background-color: $table-head-background-color;
 		color: $table-head-font-color;
 		font-family: $table-head-font-family;
@@ -14,9 +13,10 @@
 		}
 
 		&-cell {
-			padding: 0.75rem 1rem;
-			font-size: 1.1rem;
+			padding: 0 1rem;
+			font-size: 1rem;
 			font-weight: 400;
+			line-height: 2rem;
 			text-align: left;
 
 			&--text-center {
@@ -37,6 +37,7 @@
 		&-cell {
 			padding: 0.5rem 1rem;
 			text-align: left;
+			vertical-align: top;
 
 			&--text-center {
 				text-align: center;

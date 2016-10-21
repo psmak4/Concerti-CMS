@@ -31,6 +31,7 @@
 		background-color: transparent;
 		color: #444;
 		cursor: pointer;
+		white-space: nowrap;
 
 		&:hover {
 			border-color: $dropdown-border-color;

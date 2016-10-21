@@ -33,7 +33,8 @@ namespace Concerti.Website.Services
 				EmailConfirmed = false,
 				FirstName = firstName,
 				LastName = lastName,
-				DateCreated = DateTime.Now
+				DateCreated = DateTime.Now,
+				IsActive = true
 			};
 			context.Users.Add(user);
 
@@ -57,7 +58,7 @@ namespace Concerti.Website.Services
 
 		public IEnumerable<User> GetActiveUsers()
 		{
-			return context.Users.Where(u => u.IsActive == true).AsEnumerable();
+			return context.Users.Where(u => u.IsActive == true).OrderBy(u => u.Username).AsEnumerable();
 		}
 
 		public User GetUser(string username)
@@ -84,7 +85,7 @@ namespace Concerti.Website.Services
 
 		public IEnumerable<User> GetUsers()
 		{
-			return context.Users.AsEnumerable();
+			return context.Users.OrderBy(u => u.Username).AsEnumerable();
 		}
 
 		public User ResetPassword(int userId, string password)

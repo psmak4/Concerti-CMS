@@ -73,9 +73,9 @@
     <RefactorLog Include="Concerti.Database.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="local.publish.xml" />
+    <PostDeploy Include="Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Script.PostDeployment.sql" />
+    <None Include="local.publish.xml" />
   </ItemGroup>
 </Project>

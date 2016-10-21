@@ -16,6 +16,5 @@ body {
 	background-color: $body-background-color;
 	color: $body-font-color;
 	font-family: $body-font-family;
-	@include display(flex);
 	@include clearfix();
 }

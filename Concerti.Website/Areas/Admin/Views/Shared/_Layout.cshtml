@@ -14,11 +14,13 @@
 		<div class="header__logo">
 			<a class="header__logo-link" href="@Url.RouteUrl("AdminIndex")">Concerti Admin</a>
 		</div>
-
-		<nav class="header__nav nav">
-			@Html.Action("Navigation", "Base")
-		</nav>
+		<a href="#" class="header__toggle"><span class="fa fa-fw fa-bars"></span></a>
 	</header>
+
+	<nav class="nav">
+		<a href="#" class="nav__toggle"><span class="fa fa-fw fa-close"></span></a>
+		@Html.Action("Navigation", "Base")
+	</nav>
 
 	<main class="main">
 		<h1 class="main__title">@ViewBag.Title</h1>

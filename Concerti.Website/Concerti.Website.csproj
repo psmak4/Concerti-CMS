@@ -166,6 +166,66 @@
     <Content Include="js\admin\users\edit.js" />
     <Content Include="js\admin\users\index.js" />
     <Content Include="js\admin\users\resetpassword.js" />
+    <Content Include="lib\admin-lte\css\AdminLTE.css" />
+    <Content Include="lib\admin-lte\css\AdminLTE.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-black-light.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-black-light.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-black.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-black.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-blue-light.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-blue-light.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-blue.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-blue.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-green-light.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-green-light.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-green.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-green.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-purple-light.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-purple-light.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-purple.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-purple.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-red-light.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-red-light.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-red.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-red.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-yellow-light.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-yellow-light.min.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-yellow.css" />
+    <Content Include="lib\admin-lte\css\skins\skin-yellow.min.css" />
+    <Content Include="lib\admin-lte\css\skins\_all-skins.css" />
+    <Content Include="lib\admin-lte\css\skins\_all-skins.min.css" />
+    <Content Include="lib\admin-lte\img\avatar.png" />
+    <Content Include="lib\admin-lte\img\avatar04.png" />
+    <Content Include="lib\admin-lte\img\avatar2.png" />
+    <Content Include="lib\admin-lte\img\avatar3.png" />
+    <Content Include="lib\admin-lte\img\avatar5.png" />
+    <Content Include="lib\admin-lte\img\boxed-bg.jpg" />
+    <Content Include="lib\admin-lte\img\boxed-bg.png" />
+    <Content Include="lib\admin-lte\img\default-50x50.gif" />
+    <Content Include="lib\admin-lte\img\icons.png" />
+    <Content Include="lib\admin-lte\img\photo1.png" />
+    <Content Include="lib\admin-lte\img\photo2.png" />
+    <Content Include="lib\admin-lte\img\photo3.jpg" />
+    <Content Include="lib\admin-lte\img\photo4.jpg" />
+    <Content Include="lib\admin-lte\img\user1-128x128.jpg" />
+    <Content Include="lib\admin-lte\img\user2-160x160.jpg" />
+    <Content Include="lib\admin-lte\img\user3-128x128.jpg" />
+    <Content Include="lib\admin-lte\img\user4-128x128.jpg" />
+    <Content Include="lib\admin-lte\img\user5-128x128.jpg" />
+    <Content Include="lib\admin-lte\img\user6-128x128.jpg" />
+    <Content Include="lib\admin-lte\img\user7-128x128.jpg" />
+    <Content Include="lib\admin-lte\img\user8-128x128.jpg" />
+    <Content Include="lib\admin-lte\js\app.js" />
+    <Content Include="lib\admin-lte\js\app.min.js" />
+    <Content Include="lib\admin-lte\js\demo.js" />
+    <Content Include="lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="lib\bootstrap\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="lib\bootstrap\js\npm.js" />
     <Content Include="lib\ckeditor\adapters\jquery.js" />
     <Content Include="lib\ckeditor\build-config.js" />
     <Content Include="lib\ckeditor\ckeditor.js" />
@@ -359,6 +419,14 @@
     <Content Include="Areas\Admin\Views\Pages\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Base\Navigation.cshtml" />
     <Content Include="Areas\Admin\Views\Base\Alerts.cshtml" />
+    <Content Include="lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="lib\jquery\jquery.min.map">
       <DependentUpon>jquery.js</DependentUpon>
     </None>
@@ -671,6 +739,7 @@
     <Content Include="Views\Pages\NotFound.cshtml" />
     <Content Include="Views\Pages\ServerError.cshtml" />
     <Content Include="Views\Pages\SiteNavigation.cshtml" />
+    <Content Include="sass\admin\modules\_cards.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -680,6 +749,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\BlogPosts\" />
+    <Folder Include="lib\admin-lte\img\credit\" />
+    <Folder Include="lib\admin-lte\js\pages\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

@@ -1,0 +1,145 @@
+﻿.cards {
+	@include display(flex);
+	@include flex-flow(row wrap);
+}
+
+.card {
+	min-width: 100%;
+	margin: 0 0 1rem;
+	border: 0.1rem solid rgba(0, 0, 0, 0.1);
+	border-radius: 0.2rem;
+	background-color: #F8F8F8;
+	@include flex(0 0 100%);
+
+	&__header {
+		position: relative;
+		padding: 0.5rem 1rem;
+	}
+
+	&__title {
+		font-family: $open-sans;
+		font-size: 1.1rem;
+		font-weight: 400;
+	}
+
+	&__body {
+		padding: 0 1rem 1rem;
+		font-size: 0.9rem;
+	}
+
+	&__tools {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+
+		.dropdown__button-icon {
+			font-size: 1rem;
+		}
+	}
+
+	&__label {
+		display: block;
+		color: #AAA;
+		font-size: 0.8rem;
+	}
+
+	&__footer {
+		padding: 0.5rem 1rem;
+		border-top: 1px solid rgba(0, 0, 0, 0.05);
+		@include display(flex);
+		@include justify-content(space-around);
+	}
+}
+
+@media (min-width: $breakpoint-sm) {
+	.cards {
+
+	}
+
+	.card {
+		margin: 0 0 1.1rem;
+
+		&__header {
+		}
+
+		&__body {
+
+		}
+
+		&__footer {
+
+		}
+	}
+}
+
+@media (min-width: $breakpoint-md) {
+	.cards {
+		margin: 0 -0.6rem;
+		@include justify-content(space-around);
+	}
+
+	.card {
+		min-width: 0;
+		margin: 0 0.6rem 1.2rem;
+		@include flex(0 0 calc(50% - 1.2rem));
+
+		&:nth-child(odd) {
+		}
+
+		&__header {
+		}
+
+		&__body {
+
+		}
+
+		&__footer {
+
+		}
+	}
+}
+
+@media (min-width: $breakpoint-lg) {
+	.cards {
+		margin: 0 -0.65rem;
+	}
+
+	.card {
+		margin: 0 0.65rem 1.3rem;
+		@include flex(0 0 calc(50% - 1.3rem));
+
+		&__header {
+		}
+
+		&__body {
+
+		}
+
+		&__footer {
+
+		}
+	}
+}
+
+@media (min-width: $breakpoint-xl) {
+	.cards {
+		margin: 0 -0.7rem;
+	}
+
+	.card {
+		margin: 0 0.7rem 1.4rem;
+		@include flex(1 1 calc(33.33% - 1.4rem));
+
+		&__header {
+		}
+
+		&__body {
+
+		}
+
+		&__footer {
+
+		}
+	}
+}

@@ -78,9 +78,11 @@ namespace Concerti.Website.Areas.Admin.Controllers
 		private IEnumerable<NavigationViewModel> GetNavigationItems()
 		{
 			var navigation = new List<NavigationViewModel>();
-			var currentUrl = string.Format("{0}{1}{2}", Request.Url.Segments[0], Request.Url.Segments[1], Request.Url.Segments[2]);
+			var currentUrl = Request.Url.AbsolutePath;
 			if (currentUrl.EndsWith("/"))
 				currentUrl = currentUrl.Substring(0, currentUrl.Length - 1);
+			if (currentUrl.EndsWith("admin"))
+				currentUrl += "/dashboard";
 
 			navigation.Add(new NavigationViewModel(Url.RouteUrl("AdminDashboard"), "dashboard", "Dashboard", currentUrl));
 			navigation.Add(new NavigationViewModel(Url.RouteUrl("AdminPagesList"), "file", "Pages", currentUrl));

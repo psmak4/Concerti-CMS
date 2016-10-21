@@ -7,5 +7,17 @@
 });
 
 require(['jquery', 'concerti/modules/alert'], function ($, alert) {
-	alert.init();
+	$(function () {
+		alert.init();
+
+		$('.header__toggle').click(function (e) {
+			e.preventDefault();
+			$('.nav').addClass('nav--visible');
+		});
+
+		$('.nav__toggle').click(function (e) {
+			e.preventDefault();
+			$('.nav').removeClass('nav--visible');
+		});
+	});
 });

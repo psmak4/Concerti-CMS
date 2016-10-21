@@ -1,5 +1,29 @@
 ﻿.nav {
-	padding: 1rem 0;
+	position: fixed;
+	top: 0;
+	right: -16rem;
+	bottom: 0;
+	width: $nav-width;
+	padding: 3rem 0 0;
+	background-color: $nav-background-color;
+	opacity: 0;
+	transition: all ease-in-out 0.2s;
+	z-index: 1000;
+
+	&--visible {
+		right: 0;
+		opacity: 1;
+	}
+
+	&__toggle {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0 1rem;
+		color: $nav-link-font-color;
+		font-size: 1.2rem;
+		line-height: 3rem;
+	}
 
 	&__items {
 		list-style: none;
@@ -34,6 +58,138 @@
 
 		&-icon {
 			margin: 0 1rem 0 0;
+		}
+	}
+}
+
+@media (min-width: $breakpoint-sm) {
+	.nav {
+		padding: 3.2rem 0 0;
+
+		&--visible {
+		}
+
+		&__toggle {
+			padding: 0 1.1rem;
+			font-size: 1.3rem;
+			line-height: 3.2rem;
+		}
+
+		&__items {
+		}
+
+		&__item {
+		}
+
+		&__link {
+
+			&:hover {
+			}
+
+			&--active {
+			}
+
+			&-icon {
+			}
+		}
+	}
+}
+
+@media (min-width: $breakpoint-md) {
+	.nav {
+		padding: 3.4rem 0 0;
+
+		&--visible {
+		}
+
+		&__toggle {
+			padding: 0 1.2rem;
+			font-size: 1.4rem;
+			line-height: 3.4rem;
+		}
+
+		&__items {
+		}
+
+		&__item {
+		}
+
+		&__link {
+
+			&:hover {
+			}
+
+			&--active {
+			}
+
+			&-icon {
+			}
+		}
+	}
+}
+
+@media (min-width: $breakpoint-lg) {
+	.nav {
+		top: 3.6rem;
+		left: 0;
+		right: auto;
+		padding: 0;
+		opacity: 1;
+		transition: none;
+
+		&--visible {
+		}
+
+		&__toggle {
+			display: none;
+		}
+
+		&__items {
+		}
+
+		&__item {
+		}
+
+		&__link {
+
+			&:hover {
+			}
+
+			&--active {
+			}
+
+			&-icon {
+			}
+		}
+	}
+}
+
+@media (min-width: $breakpoint-xl) {
+	.nav {
+		top: 3.8rem;
+
+		&--visible {
+		}
+
+		&__toggle {
+		}
+
+		&__items {
+		}
+
+		&__item {
+		}
+
+		&__link {
+
+			&:hover {
+			}
+
+			&--active {
+			}
+
+			&-icon {
+			}
 		}
 	}
 }

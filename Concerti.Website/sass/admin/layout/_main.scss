@@ -1,18 +1,16 @@
 ﻿.main {
 	position: relative;
-	max-width: 80rem;
-	margin: 0 auto;
 	background-color: $main-background-color;
 	font-size: $main-font-size;
-	@include flex(1 1 0px);
 
 	&__title {
 		margin: 0;
-		padding: 1rem 2rem;
+		padding: 0 1rem;
 		color: $main-title-font-color;
 		font-family: $main-title-font-family;
-		font-size: 3rem;
+		font-size: 1.2rem;
 		font-weight: 400;
+		line-height: 3rem;
 	}
 
 	&__tools {
@@ -23,7 +21,7 @@
 	}
 
 	&__body {
-		padding: 1rem 2rem;
+		padding: 0 1rem;
 	}
 
 	a {
@@ -32,6 +30,104 @@
 
 		&:hover {
 			text-decoration: underline;
+		}
+	}
+}
+
+@media (min-width: $breakpoint-sm) {
+	.main {
+
+		&__title {
+			padding: 0 1.1rem;
+			font-size: 1.3rem;
+			line-height: 3.2rem;
+		}
+
+		&__tools {
+		}
+
+		&__body {
+			padding: 0 1.1rem;
+		}
+
+		a {
+
+			&:hover {
+			}
+		}
+	}
+}
+
+@media (min-width: $breakpoint-md) {
+	.main {
+
+		&__title {
+			padding: 0 1.2rem;
+			font-size: 1.4rem;
+			line-height: 3.4rem;
+		}
+
+		&__tools {
+		}
+
+		&__body {
+			padding: 0 1.2rem;
+		}
+
+		a {
+
+			&:hover {
+			}
+		}
+	}
+}
+
+@media (min-width: $breakpoint-lg) {
+	.main {
+		min-height: 100%;
+		margin-left: $main-left-margin;
+
+		&__title {
+			padding: 0 1.3rem;
+			font-size: 1.5rem;
+			line-height: 3.6rem;
+		}
+
+		&__tools {
+		}
+
+		&__body {
+			padding: 0 1.3rem;
+		}
+
+		a {
+
+			&:hover {
+			}
+		}
+	}
+}
+
+@media (min-width: $breakpoint-xl) {
+	.main {
+
+		&__title {
+			padding: 0 1.4rem;
+			font-size: 1.6rem;
+			line-height: 3.8rem;
+		}
+
+		&__tools {
+		}
+
+		&__body {
+			padding: 0 1.4rem;
+		}
+
+		a {
+
+			&:hover {
+			}
 		}
 	}
 }

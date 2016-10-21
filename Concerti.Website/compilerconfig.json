@@ -1,14 +1,2 @@
 ﻿[
-	{
-		"outputFile": "css/admin.css",
-		"inputFile": "sass/admin/admin.scss"
-	},
-	{
-		"outputFile": "css/main.css",
-		"inputFile": "sass/main/main.scss"
-	},
-	{
-		"outputFile": "css/concerti.css",
-		"inputFile": "sass/concerti/concerti.scss"
-	}
 ]

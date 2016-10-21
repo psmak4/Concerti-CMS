@@ -104,7 +104,7 @@ namespace Concerti.Website.Areas.Admin.Controllers
 
 		private string GetHomePageSettingTextValue(Setting setting)
 		{
-			var pageId = int.Parse(setting.Value);
+			var pageId = int.Parse(string.IsNullOrWhiteSpace(setting.Value) ? "0" : setting.Value);
 			return settingsService.GetHomePageSettingTextValue(pageId);
 		}
 	}

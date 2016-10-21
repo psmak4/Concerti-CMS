@@ -8,41 +8,71 @@
 	<a href="@Url.RouteUrl("AdminUserNew")" class="button button--primary">Add New <span class="button__icon fa fa-fw fa-plus"></span></a>
 </div>
 
-<table class="table">
-	<thead class="table__head">
-		<tr class="table__head-row">
-			<th class="table__head-cell">Username</th>
-			<th class="table__head-cell">Email</th>
-			<th class="table__head-cell">First Name</th>
-			<th class="table__head-cell">Last Name</th>
-			<th class="table__head-cell table__head-cell--text-center">Date Created</th>
-			<th class="table__head-cell"></th>
-		</tr>
-	</thead>
-
-	<tbody class="table__body">
-		@foreach (var item in Model)
-		{
-			<tr class="table__body-row">
-				<td class="table__body-cell">@item.Username</td>
-				<td class="table__body-cell">@item.Email</td>
-				<td class="table__body-cell">@item.FirstName</td>
-				<td class="table__body-cell">@item.LastName</td>
-				<td class="table__body-cell table__body-cell--text-center"><time datetime="@item.DateCreated.ToString("yyyy-MM-ddTHH:mm:ssZ")">@item.DateCreated.ToShortDateString() @item.DateCreated.ToShortTimeString()</time></td>
-				<td class="table__body-cell table__body-cell--text-right">
+<div class="cards">
+	@foreach (var item in Model)
+	{
+		<div class="card">
+			<div class="card__header">
+				<div class="card__title">@item.Username</div>
+				<div class="card__tools">
 					<div class="dropdown dropdown--right">
-						<button class="dropdown__button"><span class="dropdown__button-icon fa fa-fw fa-gear"></span><span class="dropdown__button-icon fa fa-fw fa-angle-down"></span></button>
+						<button class="dropdown__button"><span class="dropdown__button-icon fa fa-fw fa-ellipsis-v"></span></button>
 						<div class="dropdown__content">
 							<a class="dropdown__link" href="@Url.RouteUrl("AdminUserEdit", new { userId = item.UserId })">Edit</a>
 							<a class="dropdown__link" href="@Url.RouteUrl("AdminUserResetPassword", new { userId = item.UserId })">Reset Password</a>
 							<a class="dropdown__link" href="@Url.RouteUrl("AdminUserDelete", new { userId = item.UserId })" onclick="return confirm('Are you sure you wish to delete this user?');">Delete</a>
 						</div>
 					</div>
-				</td>
+				</div>
+			</div>
+
+			<div class="card__body">
+				<div class="card__label">Email</div>
+				<div>@item.Email</div>
+				<div class="card__label">Name</div>
+				<div>@item.FirstName @item.LastName</div>
+				<div class="card__label">Date Registered</div>
+				<div><time datetime="@item.DateCreated.ToString("yyyy-MM-ddTHH:mm:ssZ")">@item.DateCreated.ToShortDateString() @item.DateCreated.ToShortTimeString()</time></div>
+			</div>
+		</div>
+	}
+</div>
+
+@*<table class="table">
+		<thead class="table__head">
+			<tr class="table__head-row">
+				<th class="table__head-cell">Username</th>
+				<th class="table__head-cell">Email</th>
+				<th class="table__head-cell">First Name</th>
+				<th class="table__head-cell">Last Name</th>
+				<th class="table__head-cell table__head-cell--text-center">Date Created</th>
+				<th class="table__head-cell"></th>
 			</tr>
-		}
-	</tbody>
-</table>
+		</thead>
+
+		<tbody class="table__body">
+			@foreach (var item in Model)
+			{
+				<tr class="table__body-row">
+					<td class="table__body-cell">@item.Username</td>
+					<td class="table__body-cell">@item.Email</td>
+					<td class="table__body-cell">@item.FirstName</td>
+					<td class="table__body-cell">@item.LastName</td>
+					<td class="table__body-cell table__body-cell--text-center"><time datetime="@item.DateCreated.ToString("yyyy-MM-ddTHH:mm:ssZ")">@item.DateCreated.ToShortDateString() @item.DateCreated.ToShortTimeString()</time></td>
+					<td class="table__body-cell table__body-cell--text-right">
+						<div class="dropdown dropdown--right">
+							<button class="dropdown__button"><span class="dropdown__button-icon fa fa-fw fa-gear"></span><span class="dropdown__button-icon fa fa-fw fa-angle-down"></span></button>
+							<div class="dropdown__content">
+								<a class="dropdown__link" href="@Url.RouteUrl("AdminUserEdit", new { userId = item.UserId })">Edit</a>
+								<a class="dropdown__link" href="@Url.RouteUrl("AdminUserResetPassword", new { userId = item.UserId })">Reset Password</a>
+								<a class="dropdown__link" href="@Url.RouteUrl("AdminUserDelete", new { userId = item.UserId })" onclick="return confirm('Are you sure you wish to delete this user?');">Delete</a>
+							</div>
+						</div>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>*@
 
 @section scripts {
 	<script>require(['/js/admin/users/index.js']);</script>

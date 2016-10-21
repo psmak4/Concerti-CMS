@@ -16,5 +16,11 @@
     "inputFiles": [
       "css/admin.css"
     ]
+  },
+  {
+    "outputFileName": "css/concerti.min.css",
+    "inputFiles": [
+      "css/concerti.css"
+    ]
   }
 ]

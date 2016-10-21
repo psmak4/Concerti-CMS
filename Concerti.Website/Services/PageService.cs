@@ -59,6 +59,9 @@ namespace Concerti.Website.Services
 			if (setting == null)
 				return null;
 
+			if (string.IsNullOrWhiteSpace(setting.Value))
+				return null;
+
 			var pageId = int.Parse(setting.Value);
 
 			return context.Pages.FirstOrDefault(p => p.PageId == pageId);
